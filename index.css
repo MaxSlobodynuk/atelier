@@ -64,8 +64,6 @@ main {
 
 .features {
   background: transparent;
-  padding: 30px 20px;
-  padding-top: 0;
   max-width: 400px;
   width: 100%;
   position: relative;
@@ -159,10 +157,10 @@ h2 {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   position: relative;
-  /* padding: 15px 0; */
   text-transform: lowercase;
   letter-spacing: 0.5px;
-  margin-bottom: 0;
+  margin: 0;
+  margin-bottom: 20px;
 }
 
 @keyframes fadeInUp {
@@ -194,64 +192,13 @@ h2 {
   animation: fadeInUp 0.6s ease 0.4s forwards;
 }
 
-/* Мобільна адаптація */
-@media (max-width: 480px) {
-  .features {
-    padding: 30px 25px;
-    border-radius: 20px;
-  }
-
-  .features-list li {
-    padding: 16px 0 16px 45px;
-    font-size: 15px;
-  }
-
-  .features-list li::before {
-    width: 28px;
-    height: 28px;
-  }
-
-  .features-list li:nth-child(1)::after,
-  .features-list li:nth-child(2)::after,
-  .features-list li:nth-child(3)::after {
-    left: 6px;
-    font-size: 14px;
-  }
-
-  h2 {
-    font-size: 22px;
-    /* padding: 18px 0; */
-  }
-}
-
 .gallery {
-  max-width: 400px;
+  max-width: auto;
   margin: 0 auto;
   padding: 15px 20px;
   position: relative;
   display: flex;
   gap: 20px;
-}
-
-/* .gallery::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
-  height: 3px;
-  background: linear-gradient(90deg, #667eea, #764ba2);
-  border-radius: 2px;
-  margin-bottom: 20px;
-} */
-
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
-  justify-items: center;
-  margin-top: 20px;
 }
 
 .gallery-item {
@@ -432,18 +379,6 @@ h2 {
     transform: translateY(-4px) scale(1.03);
   }
 }
-
-/* .gallery::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 40px;
-  height: 2px;
-  background: linear-gradient(90deg, #764ba2, #667eea);
-  border-radius: 1px;
-} */
 
 .telegram-link {
   text-decoration: none;
