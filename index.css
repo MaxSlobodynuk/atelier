@@ -12,7 +12,8 @@ html {
 .container {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  height: 100vh;
+  height: 100dvh; /* видима висота екрана на телефонах */
   background-color: #fefefe;
 }
 
@@ -546,4 +547,120 @@ footer {
   justify-content: center;
   font-size: 24px;
   font-weight: bold;
+}
+
+/* Рядок унизу: політика конфіденційності + копірайт */
+.legal {
+  flex-shrink: 0;
+  margin-top: auto; /* притискаємо до низу екрана */
+  padding: 6px 16px max(6px, env(safe-area-inset-bottom));
+  font-size: 11px;
+  color: #999;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+}
+
+.privacy-link {
+  color: #555;
+  text-decoration: underline;
+  cursor: default;
+}
+
+/* Окрема сторінка політики (поки без посилання) */
+.privacy-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 24px 16px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.privacy-page h3 {
+  margin: 16px 0 6px;
+  font-size: 14px;
+  color: #333;
+}
+
+.privacy-page a {
+  color: #0056b3;
+}
+
+/* ===== Адаптація під висоту/ширину екрана: усе вміщається без скролу ===== */
+header.hero {
+  flex-shrink: 0;
+  min-height: 0;
+  max-height: none;
+  height: clamp(110px, 22dvh, 200px);
+}
+
+header.hero .overlay {
+  margin: 0 16px;
+  padding: clamp(6px, 1.2dvh, 10px) clamp(16px, 8vw, 60px);
+}
+
+header.hero h1 {
+  font-size: clamp(20px, 3.6dvh, 28px);
+}
+
+header.hero p {
+  font-size: clamp(13px, 2.2dvh, 1.1em);
+  margin: clamp(4px, 1dvh, 10px) 0 0;
+}
+
+.under {
+  display: none; /* порожня секція, лише займала місце */
+}
+
+main {
+  flex: 1; /* займає вільний простір між шапкою і кнопкою */
+  min-height: 0;
+  margin-top: 0;
+  justify-content: space-evenly;
+}
+
+.gallery {
+  padding: clamp(8px, 2dvh, 15px) 16px;
+  gap: 12px;
+}
+
+.gallery-item {
+  /* 3 фото завжди влазять по ширині й не забирають забагато висоти */
+  width: min(100px, calc((100vw - 56px) / 3), 13dvh);
+  height: auto;
+  aspect-ratio: 5 / 6;
+}
+
+.features-list {
+  margin: 0 0 clamp(6px, 2dvh, 25px);
+  padding-left: clamp(16px, 8vw, 40px);
+  padding-right: 16px;
+}
+
+.features-list li {
+  padding-top: clamp(4px, 1.2dvh, 10px);
+  padding-bottom: clamp(4px, 1.2dvh, 10px);
+  font-size: clamp(13px, 2.2dvh, 16px);
+}
+
+h2 {
+  font-size: clamp(18px, 3.2dvh, 24px);
+  margin-bottom: clamp(8px, 2dvh, 20px);
+}
+
+footer {
+  flex-shrink: 0;
+  padding-bottom: clamp(8px, 2.5dvh, 40px);
+}
+
+.telegram-btn {
+  padding-top: clamp(8px, 1.6dvh, 14px);
+  padding-bottom: clamp(8px, 1.6dvh, 14px);
+}
+
+@media (max-width: 480px) {
+  .gallery {
+    padding: clamp(8px, 2dvh, 15px) 16px;
+  }
 }
